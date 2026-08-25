@@ -12,7 +12,7 @@ All data related to movies, TV shows, and actors are the property of TMDB and ar
 
 ## 📜 GNU General Public License v3.0
 
-Copyright (C) 2026 [YOUR NAME OR GITHUB USERNAME]
+Copyright (C) 2026 [cpxondo]
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
