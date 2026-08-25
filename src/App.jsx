@@ -126,7 +126,7 @@ export default function App() {
                 <div className="max-w-2xl mx-auto flex items-center gap-2">
                     <Users className="text-blue-500" size={28} />
                     <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-                        Actor Matches
+                        Actors Confluence
                     </h1>
                 </div>
             </header>

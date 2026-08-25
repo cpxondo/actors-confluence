@@ -1,4 +1,37 @@
-                    GNU GENERAL PUBLIC LICENSE
+# License and Acknowledgements
+
+## 🎬 The Movie Database (TMDB) Disclaimer
+
+This application uses The Movie Database (TMDB) API to retrieve real-time data, titles, and images of filmographies to enable the cross-referencing functionality.
+
+**This product uses the TMDB API but is not endorsed or certified by TMDB.**
+
+All data related to movies, TV shows, and actors are the property of TMDB and are subject to their own terms of use.
+
+---
+
+## 📜 GNU General Public License v3.0
+
+Copyright (C) 2026 [YOUR NAME OR GITHUB USERNAME]
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+---
+
+*(Note: To make the license legally complete, you should paste the full original text of the GNU GPLv3 License below this line, which you can copy directly from: https://www.gnu.org/licenses/gpl-3.0.txt)*
+
+GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
