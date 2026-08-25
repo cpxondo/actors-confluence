@@ -1,7 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 body {
-    background-color: #111827; /* Fons fosc per defecte */
+    background-color: #111827;
 }
