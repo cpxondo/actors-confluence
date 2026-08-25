@@ -33,5 +33,5 @@ Follow these steps to clone and run the project in your local environment.
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/actor-matches.git](https://github.com/YOUR_USERNAME/actor-matches.git)
-   cd actor-matches
+   git clone [https://github.com/YOUR_USERNAME/actor-matches.git](https://github.com/YOUR_USERNAME/actors-confluence.git)
+   cd actors-confluence
