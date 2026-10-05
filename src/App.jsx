@@ -1,11 +1,32 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Search, X, Users, Film, Tv, LayoutGrid, ChevronRight, Loader2, ExternalLink } from 'lucide-react';
+import CryptoJS from 'crypto-js';
 
 const TMDB_API_KEY = '';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 
+const SECRET_KEY = 'pwa-actors-secret-key-2026';
+const STORAGE_KEY = 'tmdb_api_key_encrypted';
+
 export default function App() {
+
+    const getInitialApiKey = () => {
+        const savedEncrypted = localStorage.getItem(STORAGE_KEY);
+        if (savedEncrypted) {
+            try {
+                const bytes = CryptoJS.AES.decrypt(savedEncrypted, SECRET_KEY);
+                const decrypted = bytes.toString(CryptoJS.enc.Utf8);
+                if (decrypted) return decrypted;
+            } catch (e) {
+                console.error("No s'ha pogut desxifrar la clau de l'API guardada");
+            }
+        }
+        return TMDB_API_KEY;
+    };
+
+    const [apiKey, setApiKey] = useState(getInitialApiKey);
+
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     const [isSearching, setIsSearching] = useState(false);
@@ -16,12 +37,23 @@ export default function App() {
     const [hasCalculated, setHasCalculated] = useState(false);
     const [error, setError] = useState(null);
 
-    const [apiKey, setApiKey] = useState(TMDB_API_KEY);
     const [showSettings, setShowSettings] = useState(false);
     const [apiError, setApiError] = useState(null);
-    const [filterType, setFilterType] = useState('all'); // 'all', 'movie', 'tv'
+    const [filterType, setFilterType] = useState('movie');
 
     const searchTimeoutRef = useRef(null);
+
+    const handleApiKeyChange = (e) => {
+        const newKey = e.target.value;
+        setApiKey(newKey);
+
+        if (newKey && newKey.trim() !== '' && newKey !== TMDB_API_KEY) {
+            const encrypted = CryptoJS.AES.encrypt(newKey, SECRET_KEY).toString();
+            localStorage.setItem(STORAGE_KEY, encrypted);
+        } else {
+            localStorage.removeItem(STORAGE_KEY);
+        }
+    };
 
     const searchActors = useCallback(async (query) => {
         if (!query.trim()) {
